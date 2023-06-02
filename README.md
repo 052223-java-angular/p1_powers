@@ -52,6 +52,7 @@ view a map that traces the route of the hike that they are looking at, and allow
 - **Google Maps API** For getting the maps that the user will use to view the trailhead and directions to the trailhead
 -**HTML and CSS** For designing the frontend web page
 -**JavaScript** For enhancing the webpage and giving it more functionality than a traditional static webpage
+
 -**jQuery** For enhancing the javascript and for simplifying the flow of data from the frontend to the backend
 
 
