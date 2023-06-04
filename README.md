@@ -9,11 +9,12 @@ view a map that traces the route of the hike that they are looking at, and allow
 - **As a user**, I want to be able to log in and see the trails that i've hiked
 - **As a user**, I want to be able to create an account
 - **As a user**, I want to be able to search for new hiking trails in my area
-- **As a user**,  I want to be able to check off trails that I have hiked and leave ratings on their difficulty.
+- **As a user**, I want to be able to check off trails that I have hiked and leave ratings on their difficulty.
 - **As a user**, I want to be able to view a map to get directions to the trailhead
 - **As a user**, I want to be able to see other people's ratings for the trail
 - **As a user**, I want to be able to search for trails to hike
 - **As a user**, I want to be able to see a map that traces the hike's route
+- **As a user**, I want to be able to purchase snow items like microspikes for icy trails
 
 
 
@@ -28,6 +29,7 @@ view a map that traces the route of the hike that they are looking at, and allow
 - Ability to get directions to the trailhead using a map
 - Ability to see a map that traces the trail's route
 - Ability to see what other ratings people have left for the trails
+- Ability to purchase items like microspikes and snowshoes
 
 ## Stretch Goals
 
@@ -35,7 +37,7 @@ view a map that traces the route of the hike that they are looking at, and allow
   ratings of difficulty
 - Implement a star rating system that allows users to rate the trail on other qualities 
   rather than difficulty
-- Ability to show weather conditions for the trail and advise the user to use extra hiking    equipment when necessary based on the current weather conditions
+- Ability to show weather conditions for the trail and advise the user to use extra hiking equipment when necessary based on the current weather conditions
 
 
 
@@ -50,10 +52,10 @@ view a map that traces the route of the hike that they are looking at, and allow
 - **BCrypt**: A Java library for hashing and checking passwords for security.
 - **Git and GitHub**: Used for version control.
 - **Google Maps API** For getting the maps that the user will use to view the trailhead and directions to the trailhead
--**HTML and CSS** For designing the frontend web page
--**JavaScript** For enhancing the webpage and giving it more functionality than a traditional static webpage
-
--**jQuery** For enhancing the javascript and for simplifying the flow of data from the frontend to the backend
+- **HTML and CSS** For designing the frontend web page
+- **JavaScript** For enhancing the webpage and giving it more functionality than a traditional static webpage
+- **Spring Boot** For creating the embedded server infrastructure and simplifying the database creation process
+- **jQuery** For enhancing the javascript and for simplifying the flow of data from the frontend to the backend
 
 
 
