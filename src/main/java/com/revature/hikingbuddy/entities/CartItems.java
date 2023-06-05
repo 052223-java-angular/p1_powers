@@ -3,6 +3,7 @@ package com.revature.hikingbuddy.entities;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
@@ -17,13 +18,13 @@ public class CartItems {
 
     private double price;
 
-    @ManyToOne
     @Column(nullable = false)
+    @ManyToOne
     private Cart cart_id;
 
-
+    //@Column(nullable = false)
     @ManyToOne
-    @Column(nullable = false)
+    @JoinColumn(name = "id")
     private Product product_id;
 
     

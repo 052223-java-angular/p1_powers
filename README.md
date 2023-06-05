@@ -14,7 +14,7 @@ view a map that traces the route of the hike that they are looking at, and allow
 - **As a user**, I want to be able to see other people's ratings for the trail
 - **As a user**, I want to be able to search for trails to hike
 - **As a user**, I want to be able to see a map that traces the hike's route
-- **As a user**, I want to be able to purchase snow items like microspikes for icy trails
+
 
 
 
@@ -29,7 +29,7 @@ view a map that traces the route of the hike that they are looking at, and allow
 - Ability to get directions to the trailhead using a map
 - Ability to see a map that traces the trail's route
 - Ability to see what other ratings people have left for the trails
-- Ability to purchase items like microspikes and snowshoes
+
 
 ## Stretch Goals
 
@@ -47,11 +47,11 @@ view a map that traces the route of the hike that they are looking at, and allow
 - **Java**: The main programming language used for building the backend service.
 - **PostgreSQL**: Used as the database to store user and trail data as well as difficulty rating data.
 - **Maven or Gradle**: Used for managing project dependencies on the backend.
-- **JUnit**: A testing framework for Java applications, used to ensure the backend code works as expected.
-- **JDBC (Java Database Connectivity)**: An API for connecting and executing queries on the database.
+- **JUnit, Mockito, and PowerMock**: A testing framework for Java applications, used to ensure the backend code works as expected.
 - **BCrypt**: A Java library for hashing and checking passwords for security.
+- **TrailAPI** For getting GPX data and showing the user the route of the trail
+- **Weather API** For showing the user the weather conditions of the trail
 - **Git and GitHub**: Used for version control.
-- **Google Maps API** For getting the maps that the user will use to view the trailhead and directions to the trailhead
 - **HTML and CSS** For designing the frontend web page
 - **JavaScript** For enhancing the webpage and giving it more functionality than a traditional static webpage
 - **Spring Boot** For creating the embedded server infrastructure and simplifying the database creation process
