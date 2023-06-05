@@ -37,7 +37,7 @@ view a map that traces the route of the hike that they are looking at, and allow
   ratings of difficulty
 - Implement a star rating system that allows users to rate the trail on other qualities 
   rather than difficulty
-- Ability to show weather conditions for the trail and advise the user to use extra hiking equipment when necessary based on the current weather conditions
+- Ability to filter for trails by country
 
 
 
