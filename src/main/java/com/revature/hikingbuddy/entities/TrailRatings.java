@@ -1,5 +1,7 @@
 package com.revature.hikingbuddy.entities;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
@@ -14,18 +16,16 @@ import jakarta.persistence.Table;
 public class TrailRatings {
     @Id
     private String id;
-
     private double rating;
-
     private String comment;
-
-    
-   // @Column(nullable = false)
+ 
     @ManyToOne
-    @JoinColumn(name="name")
+    @JoinColumn(name = "trail_name")
+    @JsonBackReference
     private Trails trail_name;
 
-    @OneToOne
-    @Column(nullable = false)
+    @ManyToOne
+    @JoinColumn(name = "user.id")
+    @JsonBackReference
     private User user_id;
 }

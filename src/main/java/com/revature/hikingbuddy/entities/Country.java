@@ -1,18 +1,19 @@
 package com.revature.hikingbuddy.entities;
 
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
-import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "cart")
-public class Cart {
-    @Id
-    private String cart_id;
+@Table(name = "country")
+public class Country {
 
-    @OneToOne
-    private User user_id;
+   @Id
+    private String Name;
 
+    private int numTrails;
+
+    
     
 }

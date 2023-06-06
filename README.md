@@ -26,9 +26,12 @@ view a map that traces the route of the hike that they are looking at, and allow
 - User Login and registration
 - Ability to search for new trails in my area
 - Ability to rate trails that I have hiked for difficulty
-- Ability to get directions to the trailhead using a map
+- Ability to get directions to the trailhead 
 - Ability to see a map that traces the trail's route
 - Ability to see what other ratings people have left for the trails
+- Ability to filter for trails by country
+- Ability to have a profile picture
+- Ability to recommend trails based on difficulty
 
 
 ## Stretch Goals
@@ -37,7 +40,9 @@ view a map that traces the route of the hike that they are looking at, and allow
   ratings of difficulty
 - Implement a star rating system that allows users to rate the trail on other qualities 
   rather than difficulty
-- Ability to filter for trails by country
+- Ability to see weather conditions on the trails
+
+
 
 
 
