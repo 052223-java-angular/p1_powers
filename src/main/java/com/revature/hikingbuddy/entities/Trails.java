@@ -2,6 +2,7 @@ package com.revature.hikingbuddy.entities;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
@@ -14,8 +15,11 @@ public class Trails {
     @Id
     @JsonManagedReference
     private String name;
+    @Column
     private String hasHiked;
+    @Column
     private double avgRating;
+    @Column
     private double trailLength;
 
     @ManyToOne

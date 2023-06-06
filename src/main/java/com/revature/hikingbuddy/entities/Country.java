@@ -1,6 +1,7 @@
 package com.revature.hikingbuddy.entities;
 
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
@@ -9,9 +10,9 @@ import jakarta.persistence.Table;
 @Table(name = "country")
 public class Country {
 
-   @Id
+    @Id
     private String Name;
-
+    @Column
     private int numTrails;
 
     

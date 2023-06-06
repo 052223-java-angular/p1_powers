@@ -8,7 +8,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 
 import jakarta.persistence.ManyToOne;
-import jakarta.persistence.OneToOne;
+
 import jakarta.persistence.Table;
 
 @Entity
@@ -16,7 +16,9 @@ import jakarta.persistence.Table;
 public class TrailRatings {
     @Id
     private String id;
+    @Column
     private double rating;
+    @Column
     private String comment;
  
     @ManyToOne
