@@ -10,7 +10,6 @@ import lombok.Setter;
 @Getter
 @Setter
 public class NewRoleRequest {
-    private String role_id;
     private String role_name;
 
 }

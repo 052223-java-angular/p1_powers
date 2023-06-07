@@ -54,12 +54,7 @@ public class UserService {
         }
         else
         {
-          NewRoleRequest rq = new NewRoleRequest("1", "USER");
-          Role role = new Role();
-          role.setId(rq.getRole_id());
-          role.setName(rq.getRole_name());
-          roleservice.saveRole(role);
-          return role;
+          throw new RoleNotFoundException("Role Not foudn. Exception thrown at UserService.getUserRole()");
         }
 
         
