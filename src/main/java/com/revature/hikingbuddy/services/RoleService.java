@@ -20,12 +20,11 @@ public class RoleService {
         this.rolerepo = rolerepo;
     }
 
-    public Role saveRole(NewRoleRequest rq)
+    public void saveRole(NewRoleRequest rq)
     {
-        Role role = new Role();
-        role.setId(rq.getRole_id());
-        role.setName(rq.getRole_name());
-        return rolerepo.save(role);
+        Role role = new Role(rq.getRole_name());
+        rolerepo.save(role);
+        
     }
 
     public RoleService getInstance()
