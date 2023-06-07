@@ -9,7 +9,11 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
+import lombok.Getter;
+import lombok.Setter;
 
+@Getter
+@Setter
 @Entity
 @Table(name = "users")
 public class User {
@@ -26,7 +30,7 @@ public class User {
    @ManyToOne
    @JoinColumn(name = "role_id")
    @JsonBackReference
-   private Roles role_id;
+   private Role role_id;
 
 
     

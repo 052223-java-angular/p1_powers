@@ -26,14 +26,9 @@ public class AuthController {
     @PostMapping("/register")
     public ResponseEntity<?> createuser(@RequestBody NewUserRequest req)
     {
-         
-
-
-
-
-
-
-        return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
+        System.out.println("In responseHandler");
+        userservice.registerUser(req);
+        return ResponseEntity.status(HttpStatus.CREATED).build();
     }
    
     
