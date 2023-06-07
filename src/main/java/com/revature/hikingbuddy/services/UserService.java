@@ -8,6 +8,7 @@ import java.util.UUID;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.revature.hikingbuddy.dtos.requests.NewRoleRequest;
 import com.revature.hikingbuddy.dtos.requests.NewUserRequest;
 import com.revature.hikingbuddy.entities.Role;
 import com.revature.hikingbuddy.entities.User;
@@ -32,14 +33,14 @@ public class UserService {
    
    public void registerUser(NewUserRequest rq)
    {
-        System.out.println("In registerUser");
-        Role role = getUserRole("USER");
-        User user = new User();    
-        user.setRole_id(role);
-        user.setId(UUID.randomUUID().toString());
-        user.setUsername(rq.getUsername());
-        user.setPassword(rq.getPassword());
-        saveUser(user);
+       System.out.println("in registerUser");
+       Role role = getUserRole("USER");
+       User user = new User();
+       user.setId(UUID.randomUUID().toString());
+       user.setUsername(rq.getUsername());
+       user.setPassword(rq.getPassword());
+       user.setRole_id(role);
+       saveUser(user);
    }
 
    public Role getUserRole(String name)
@@ -53,7 +54,12 @@ public class UserService {
         }
         else
         {
-          throw new RoleNotFoundException("Role not found");
+          NewRoleRequest rq = new NewRoleRequest("1", "USER");
+          Role role = new Role();
+          role.setId(rq.getRole_id());
+          role.setName(rq.getRole_name());
+          roleservice.saveRole(role);
+          return role;
         }
 
         
