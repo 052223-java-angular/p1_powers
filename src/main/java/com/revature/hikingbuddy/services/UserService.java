@@ -5,15 +5,18 @@ package com.revature.hikingbuddy.services;
 import java.util.Optional;
 import java.util.UUID;
 
+import org.mindrot.jbcrypt.BCrypt;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.revature.hikingbuddy.dtos.requests.NewRoleRequest;
+import com.revature.hikingbuddy.dtos.requests.NewLoginRequest;
 import com.revature.hikingbuddy.dtos.requests.NewUserRequest;
+import com.revature.hikingbuddy.dtos.responses.Principal;
 import com.revature.hikingbuddy.entities.Role;
 import com.revature.hikingbuddy.entities.User;
 import com.revature.hikingbuddy.repositories.UserRepository;
 import com.revature.hikingbuddy.utils.custom_exceptions.RoleNotFoundException;
+import com.revature.hikingbuddy.utils.custom_exceptions.UserNotFoundException;
 
 
 
@@ -31,16 +34,18 @@ public class UserService {
      this.roleservice = roleservice;
    }
    
-   public void registerUser(NewUserRequest rq)
+   public User registerUser(NewUserRequest rq)
    {
        System.out.println("in registerUser");
        Role role = getUserRole("USER");
        User user = new User();
+       String hashed = BCrypt.hashpw(rq.getPassword(), BCrypt.gensalt());
        user.setId(UUID.randomUUID().toString());
        user.setUsername(rq.getUsername());
-       user.setPassword(rq.getPassword());
+       user.setPassword(hashed);
        user.setRole_id(role);
        saveUser(user);
+       return user;
    }
 
    public Role getUserRole(String name)
@@ -58,6 +63,21 @@ public class UserService {
         }
 
         
+   }
+   public Principal login(NewLoginRequest rq)
+   {
+      Optional<User> userOpt = userrepo.findByUsername(rq.getUsername());
+
+      if(userOpt.isPresent())
+      {
+        User user = userOpt.get();
+        if(BCrypt.checkpw(rq.getPassword(), user.getPassword()))
+        {
+           return new Principal(user);
+        }
+      }
+
+      throw new UserNotFoundException("Your password and/or username is not correct");
    }
    public UserService getInstance()
    {
