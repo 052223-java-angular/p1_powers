@@ -35,6 +35,17 @@ public class TokenService {
                .compact();
     }
 
+    public boolean validateToken(String token, Principal userPrincipal)
+    {
+        String tokenUsername = extractUsername(token);
+        return tokenUsername.equals(userPrincipal.getUsername());
+    }
+
+    public String extractUsername(String token)
+    {
+        return extractClaim(token, Claims::getSubject);
+    }
+
     public <T> T extractClaim(String token, Function<Claims, T> claimsResolver)
     {
         final Claims claims = extractAllClaims(token);
