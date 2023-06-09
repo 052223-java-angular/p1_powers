@@ -35,6 +35,7 @@ public class AuthController {
        return ResponseEntity.status(HttpStatus.CREATED).body(user);
     }
 
+
     @GetMapping("/login")
     public ResponseEntity<?> login(@RequestBody NewLoginRequest rq)
     {

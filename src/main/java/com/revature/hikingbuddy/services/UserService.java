@@ -94,6 +94,19 @@ public class UserService {
         userrepo.save(user);
    }
 
+   public User getUserById(String id)
+   {
+      Optional<User> userOpt = userrepo.findById(id);
+
+      if(userOpt.isPresent())
+      {
+         User user = userOpt.get();
+         return user;
+      }
+
+      throw new UserNotFoundException("User Not Found. Exception thrown at UserService.getUserById()");
+   }
+
 
    
 
