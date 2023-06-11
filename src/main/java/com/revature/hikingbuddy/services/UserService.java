@@ -108,6 +108,19 @@ public class UserService {
    }
 
 
+   public boolean isUniqueUsername(String username)
+   {
+      Optional<User> userOpt = userrepo.findByUsername(username);
+
+      if(userOpt.isPresent())
+      {
+         return false;
+      }
+
+      return true;
+   }
+
+
    
 
 
