@@ -1,5 +1,6 @@
 package com.revature.hikingbuddy.controllers;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -15,6 +16,12 @@ import com.revature.hikingbuddy.services.RatingService;
 @RequestMapping("/ratings")
 public class RatingController {
     private RatingService ratingservice;
+
+    @Autowired
+    private RatingController(RatingService ratingservice)
+    {
+        this.ratingservice = ratingservice;
+    }
 
     @PostMapping("/post")
     public ResponseEntity<?> createRating(@RequestBody NewRatingRequest rq)

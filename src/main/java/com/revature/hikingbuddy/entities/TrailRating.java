@@ -1,5 +1,7 @@
 package com.revature.hikingbuddy.entities;
 
+import java.util.UUID;
+
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import jakarta.persistence.Column;
@@ -22,6 +24,7 @@ import lombok.Setter;
 @Entity
 @Table(name="trail_rating")
 public class TrailRating {
+
     @Id
     private String id;
     @Column
@@ -32,10 +35,12 @@ public class TrailRating {
     @ManyToOne
     @JoinColumn(name = "trail_name")
     @JsonBackReference
-    private Trails trail_name;
+    private Trail trail_name;
 
     @ManyToOne
-    @JoinColumn(name = "user.id")
+    @JoinColumn(name = "user_id")
     @JsonBackReference
     private User user_id;
+
+   
 }

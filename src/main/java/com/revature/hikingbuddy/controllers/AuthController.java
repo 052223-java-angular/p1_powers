@@ -15,6 +15,7 @@ import com.revature.hikingbuddy.dtos.responses.Principal;
 import com.revature.hikingbuddy.entities.User;
 import com.revature.hikingbuddy.services.TokenService;
 import com.revature.hikingbuddy.services.UserService;
+import com.revature.hikingbuddy.utils.custom_exceptions.UserAlreadyExistsException;
 
 import lombok.AllArgsConstructor;
 
@@ -27,11 +28,16 @@ public class AuthController {
 
 
     @PostMapping("/register")
-    public ResponseEntity<?> createuser(@RequestBody NewUserRequest req)
+    public ResponseEntity<?> createuser(@RequestBody NewUserRequest rq)
     {
         
         System.out.println("In responseHandler");
-        User user = userservice.registerUser(req);
+        Boolean isUniqueUsername = userservice.isUniqueUsername(rq.getUsername());
+        if(isUniqueUsername == false)
+        {
+            throw new UserAlreadyExistsException("User Already exists. Exception thrown at AuthController.createuser()");
+        }
+        User user = userservice.registerUser(rq);
        return ResponseEntity.status(HttpStatus.CREATED).body(user);
     }
 
