@@ -7,6 +7,13 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@NoArgsConstructor
+@Getter
+@Setter
 
 @Entity
 @Table(name = "user_trail")
@@ -23,7 +30,7 @@ public class UserTrail {
     @JsonBackReference(value = "trail_reference")
     @ManyToOne
     @JoinColumn(name = "trail_name")
-    private Trail trail_name;
+    private Trail trailName;
 
     
 }

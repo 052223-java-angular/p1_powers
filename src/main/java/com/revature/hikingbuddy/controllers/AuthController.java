@@ -51,7 +51,6 @@ public class AuthController {
 
         principal.setToken(token);
 
-
         return ResponseEntity.status(HttpStatus.OK).body(principal);
     }
    

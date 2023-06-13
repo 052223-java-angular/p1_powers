@@ -11,7 +11,15 @@ import jakarta.persistence.FetchType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@Setter
 @Entity
 @Table(name = "country")
 public class Country {
@@ -21,9 +29,9 @@ public class Country {
     @Column
     private int numTrails;
 
-    @JsonManagedReference
+    /*@JsonManagedReference
     @OneToMany(mappedBy = "country_name", fetch = FetchType.LAZY)
-    private Set<Trail> trailName;
+    private Set<Trail> trailName;*/
 
     
     
