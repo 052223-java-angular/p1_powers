@@ -11,7 +11,6 @@ import lombok.Setter;
 @Setter
 public class NewTrailRequest {
     private String name;
-    private double averageRating;
     private double trailLength;
     private String country_name;
 

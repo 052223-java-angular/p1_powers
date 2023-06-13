@@ -27,8 +27,6 @@ public class Trail {
     @Id
     private String name;
     @Column
-    private double avgRating;
-    @Column
     private double trailLength;
     @ManyToOne
     @JoinColumn(name = "country_name")

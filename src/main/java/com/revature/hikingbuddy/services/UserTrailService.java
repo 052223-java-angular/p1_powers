@@ -11,7 +11,7 @@ import com.revature.hikingbuddy.entities.Trail;
 import com.revature.hikingbuddy.entities.User;
 import com.revature.hikingbuddy.entities.UserTrail;
 import com.revature.hikingbuddy.repositories.UserTrailRepository;
-import com.revature.hikingbuddy.utils.custom_exceptions.UserTrailAlreadyExistsException;
+
 
 @Service
 public class UserTrailService {
@@ -32,11 +32,16 @@ public class UserTrailService {
             user.setId(rq.getUser_id());
             Trail trail = new Trail();
             trail.setName(rq.getTrail_name());
-            usertrail.setTrail_name(trail);
+            usertrail.setTrailName(trail);
             usertrail.setUser_id(user);
             usertrailrepo.save(usertrail);
             return usertrail;
         
+    }
+
+    public Optional<UserTrail> findTrailByTrail_name(Trail trailName)
+    {
+        return usertrailrepo.findUserTrailByTrailName(trailName);
     }
     
 }

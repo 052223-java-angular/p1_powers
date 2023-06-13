@@ -37,12 +37,7 @@ public class UserService {
    
    public User registerUser(NewUserRequest rq)
    {
-     if(isUniqueUsername(rq.getUsername()) == false)
-     {
-         throw new UserAlreadyExistsException("This user already exists. Exception thrown at UserService.registerUser()");
-     }
-     else
-     {
+
        System.out.println("in registerUser");
        Role role = getUserRole("USER");
        User user = new User();
@@ -53,7 +48,7 @@ public class UserService {
        user.setRole_id(role);
        saveUser(user);
        return user;
-     }
+     
    }
 
    public Role getUserRole(String name)
@@ -83,6 +78,7 @@ public class UserService {
         {
            return new Principal(user);
         }
+       
       }
 
       throw new UserNotFoundException("Your password and/or username is not correct");

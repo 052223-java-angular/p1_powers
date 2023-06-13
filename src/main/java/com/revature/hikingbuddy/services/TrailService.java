@@ -33,7 +33,6 @@ public class TrailService {
     {
         Trail trail = new Trail();
         trail.setName(rq.getName());
-        trail.setAvgRating(rq.getAverageRating());
         trail.setTrailLength(rq.getTrailLength());
         Country country = new Country();
         country.setName(rq.getCountry_name());

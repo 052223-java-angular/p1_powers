@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import com.revature.hikingbuddy.dtos.requests.NewRoleRequest;
 import com.revature.hikingbuddy.entities.Role;
 import com.revature.hikingbuddy.repositories.RoleRepository;
+import com.revature.hikingbuddy.utils.custom_exceptions.RoleAlreadyExistsException;
 
 @Service
 public class RoleService {

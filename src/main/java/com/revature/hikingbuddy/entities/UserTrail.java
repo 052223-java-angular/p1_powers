@@ -30,7 +30,7 @@ public class UserTrail {
     @JsonBackReference(value = "trail_reference")
     @ManyToOne
     @JoinColumn(name = "trail_name")
-    private Trail trail_name;
+    private Trail trailName;
 
     
 }
