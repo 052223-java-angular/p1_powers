@@ -16,6 +16,7 @@ import com.revature.hikingbuddy.entities.Role;
 import com.revature.hikingbuddy.entities.User;
 import com.revature.hikingbuddy.repositories.UserRepository;
 import com.revature.hikingbuddy.utils.custom_exceptions.RoleNotFoundException;
+import com.revature.hikingbuddy.utils.custom_exceptions.UserAlreadyExistsException;
 import com.revature.hikingbuddy.utils.custom_exceptions.UserNotFoundException;
 
 
@@ -36,6 +37,12 @@ public class UserService {
    
    public User registerUser(NewUserRequest rq)
    {
+     if(isUniqueUsername(rq.getUsername()) == false)
+     {
+         throw new UserAlreadyExistsException("This user already exists. Exception thrown at UserService.registerUser()");
+     }
+     else
+     {
        System.out.println("in registerUser");
        Role role = getUserRole("USER");
        User user = new User();
@@ -46,6 +53,7 @@ public class UserService {
        user.setRole_id(role);
        saveUser(user);
        return user;
+     }
    }
 
    public Role getUserRole(String name)
@@ -59,7 +67,7 @@ public class UserService {
         }
         else
         {
-          throw new RoleNotFoundException("Role Not foudn. Exception thrown at UserService.getUserRole()");
+          throw new RoleNotFoundException("Role Not found. Exception thrown at UserService.getUserRole()");
         }
 
         
