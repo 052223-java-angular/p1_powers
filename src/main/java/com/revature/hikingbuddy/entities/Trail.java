@@ -34,9 +34,9 @@ public class Trail {
     @JoinColumn(name = "country_name")
     private Country country_name;
 
-    @JsonManagedReference
+   /*  @JsonManagedReference
     @OneToMany(mappedBy = "trail_name", fetch = FetchType.LAZY)
-    private Set<UserTrail> user_trails;
+    private Set<UserTrail> user_trails;*/
    
     
 }

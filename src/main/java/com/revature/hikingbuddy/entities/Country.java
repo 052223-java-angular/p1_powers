@@ -29,9 +29,9 @@ public class Country {
     @Column
     private int numTrails;
 
-    @JsonManagedReference
+    /*@JsonManagedReference
     @OneToMany(mappedBy = "country_name", fetch = FetchType.LAZY)
-    private Set<Trail> trailName;
+    private Set<Trail> trailName;*/
 
     
     
