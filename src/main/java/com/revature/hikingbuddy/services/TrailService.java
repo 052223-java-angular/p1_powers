@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.revature.hikingbuddy.dtos.requests.NewTrailRequest;
 import com.revature.hikingbuddy.entities.Country;
-import com.revature.hikingbuddy.entities.Trails;
+import com.revature.hikingbuddy.entities.Trail;
 import com.revature.hikingbuddy.repositories.TrailRepository;
 
 @Service
@@ -21,9 +21,9 @@ public class TrailService {
     }
 
 
-    public Trails saveTrail(NewTrailRequest rq)
+    public Trail saveTrail(NewTrailRequest rq)
     {
-        Trails trail = new Trails();
+        Trail trail = new Trail();
         trail.setName(rq.getName());
         trail.setAvgRating(rq.getAverageRating());
         trail.setTrailLength(rq.getTrailLength());

@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.revature.hikingbuddy.dtos.requests.GetTrailRequest;
 import com.revature.hikingbuddy.dtos.requests.NewTrailRequest;
-import com.revature.hikingbuddy.entities.Trails;
+import com.revature.hikingbuddy.entities.Trail;
 import com.revature.hikingbuddy.services.TrailService;
 
 @RestController
@@ -29,7 +29,7 @@ public class TrailController {
     @PostMapping("/create")
     public ResponseEntity<?> create(@RequestBody NewTrailRequest rq)
     {
-        Trails trail = trailservice.saveTrail(rq);
+        Trail trail = trailservice.saveTrail(rq);
         return ResponseEntity.status(HttpStatus.CREATED).body(trail);
     }
 
