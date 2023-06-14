@@ -16,12 +16,13 @@ import lombok.AllArgsConstructor;
 @RestController
 @RequestMapping("/roles")
 public class RoleController {
+    /*
+     * This class allows the user to create a role in the system whenever the /roles endpoint is created
+     */
     private RoleService roleservice;
 
   
 
-
-    
     @PostMapping("/create")
     public ResponseEntity<?> createRole(@RequestBody NewRoleRequest rq)
     {

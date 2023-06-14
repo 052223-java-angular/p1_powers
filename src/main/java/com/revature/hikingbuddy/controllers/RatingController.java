@@ -15,6 +15,10 @@ import com.revature.hikingbuddy.services.RatingService;
 @RestController
 @RequestMapping("/ratings")
 public class RatingController {
+    /*
+     * This class is another controller class that is called whenever the user wants to leave a rating on a trail that 
+     * they have hiked
+     */
     private RatingService ratingservice;
 
     @Autowired
@@ -23,11 +27,12 @@ public class RatingController {
         this.ratingservice = ratingservice;
     }
 
+    //This method saves the rating to the database so that it can be displayed later
     @PostMapping("/post")
     public ResponseEntity<?> createRating(@RequestBody NewRatingRequest rq)
     {
         TrailRating rating = ratingservice.saveRating(rq);
-        return ResponseEntity.status(HttpStatus.CREATED).body(rating);
+        return ResponseEntity.status(HttpStatus.CREATED).build();
     }
     
 }

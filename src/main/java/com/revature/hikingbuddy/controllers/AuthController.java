@@ -23,6 +23,10 @@ import lombok.AllArgsConstructor;
 @RequestMapping("/auth")
 @AllArgsConstructor
 public class AuthController {
+    /*
+     * This class handles the requests as the come in from the internet and processes register and login requests
+     * 
+     */
     private final UserService userservice;
     private final TokenService tokenservice;
 
@@ -38,7 +42,7 @@ public class AuthController {
             throw new UserAlreadyExistsException("User Already exists. Exception thrown at AuthController.createuser()");
         }
         User user = userservice.registerUser(rq);
-       return ResponseEntity.status(HttpStatus.CREATED).body(user);
+       return ResponseEntity.status(HttpStatus.CREATED).build();
     }
 
 

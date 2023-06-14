@@ -1,5 +1,6 @@
 package com.revature.hikingbuddy.services;
 
+import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -42,6 +43,11 @@ public class UserTrailService {
     public Optional<UserTrail> findTrailByTrail_name(Trail trailName)
     {
         return usertrailrepo.findUserTrailByTrailName(trailName);
+    }
+
+    public List<Trail> getAllTrailsNotHiked(String user_id)
+    {
+        return usertrailrepo.findAllTrailsNotHiked(user_id);
     }
     
 }

@@ -10,10 +10,13 @@ import com.revature.hikingbuddy.entities.Role;
 import com.revature.hikingbuddy.repositories.RoleRepository;
 import com.revature.hikingbuddy.utils.custom_exceptions.RoleAlreadyExistsException;
 
+import lombok.NoArgsConstructor;
+
+@NoArgsConstructor
 @Service
 public class RoleService {
     private RoleRepository rolerepo;
-    private RoleService instance;
+    private static RoleService instance;
 
     @Autowired
     private RoleService(RoleRepository rolerepo)

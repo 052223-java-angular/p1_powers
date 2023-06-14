@@ -39,8 +39,6 @@ public class RatingService {
          throw new UserTrailDoesNotExistException("You have not hiked the trail you are trying to rate. Exception thrown at RatingService.saveRating");
        }
 
-        
-
         TrailRating rating = new TrailRating();
         User user = new User();
         rating.setId(UUID.randomUUID().toString());
@@ -51,8 +49,6 @@ public class RatingService {
         rating.setTrail_name(trail);
         ratingrepo.save(rating);
         return rating;
-
-
 
     }
     
