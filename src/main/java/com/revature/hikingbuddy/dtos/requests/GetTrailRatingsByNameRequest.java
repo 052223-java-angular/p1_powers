@@ -5,10 +5,12 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+@AllArgsConstructor
+@NoArgsConstructor
 @Getter
 @Setter
-public class GetTrailRequest {
-    private String user_id;
-    
+public class GetTrailRatingsByNameRequest {
+    private String trailName;
+
     
 }

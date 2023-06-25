@@ -69,19 +69,24 @@ public class UserService {
    }
    public Principal login(NewLoginRequest rq)
    {
+     
       Optional<User> userOpt = userrepo.findByUsername(rq.getUsername());
 
       if(userOpt.isPresent())
       {
-        User user = userOpt.get();
-        if(BCrypt.checkpw(rq.getPassword(), user.getPassword()))
-        {
-           return new Principal(user);
-        }
+         System.out.println("UserOpt.isPresent()");
+         User user = userOpt.get();
+         System.out.println("Password in user object: " + user.getPassword());
+         System.out.println("rq.getPassword()" + rq.getPassword());
+         if(BCrypt.checkpw(rq.getPassword(), user.getPassword()))
+         {
+            System.out.println("In the inner for loop");
+            return new Principal(user);
+         }
        
       }
 
-      throw new UserNotFoundException("Your password and/or username is not correct");
+      throw new UserNotFoundException("Your username and/or password is not correct");
    }
    public UserService getInstance()
    {
@@ -97,6 +102,7 @@ public class UserService {
    {
         userrepo.save(user);
    }
+
 
    public User getUserById(String id)
    {

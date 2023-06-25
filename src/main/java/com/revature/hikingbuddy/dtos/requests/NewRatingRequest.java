@@ -17,6 +17,6 @@ public class NewRatingRequest {
     private String user_id;
     private double rating;
     private String comment;
-    private String trail_name;
+    private String trailName;
 
 }
