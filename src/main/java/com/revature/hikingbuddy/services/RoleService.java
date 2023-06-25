@@ -55,10 +55,10 @@ public class RoleService {
     }
     
 
-    public void saveRole(Role role)
+    /*public void saveRole(Role role)
     {
         rolerepo.save(role);
-    }
+    }*/
 
     public Optional<Role> getRoleByName(String name)
     {

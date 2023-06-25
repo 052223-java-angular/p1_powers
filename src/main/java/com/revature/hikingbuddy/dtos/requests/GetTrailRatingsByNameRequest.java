@@ -1,8 +1,5 @@
 package com.revature.hikingbuddy.dtos.requests;
 
-
-
-
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -12,11 +9,8 @@ import lombok.Setter;
 @NoArgsConstructor
 @Getter
 @Setter
-public class NewRatingRequest {
-
-    private String user_id;
-    private double rating;
-    private String comment;
+public class GetTrailRatingsByNameRequest {
     private String trailName;
 
+    
 }
